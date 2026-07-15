@@ -96,3 +96,22 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+# ServiApp 🔧
+
+Marketplace de servicios técnicos a domicilio (Bucaramanga).
+
+## Stack
+- Frontend: React (Vite) + Zustand
+- Backend: NestJS — repo: https://github.com/faga01/serviapp-api
+
+## Funcionalidades
+- Listado de técnicos desde API propia (fetch + useEffect)
+- Buscador en vivo por servicio (useState + filter)
+- Estado global con Zustand
+- Manejo de estados loading / data / error
+
+## Cómo correrlo
+npm install
+npm run dev
