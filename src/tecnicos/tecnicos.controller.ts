@@ -22,5 +22,10 @@ export class TecnicosController {
     return this.tecnicosService.create(datos);
   }
 
+  @Delete(':id')
+  remove(@Param('id') id:string) {
+    return this.tecnicosService.remove(+id)
+  }
+
 
 }

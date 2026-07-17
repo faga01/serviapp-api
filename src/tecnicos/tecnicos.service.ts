@@ -30,4 +30,10 @@ export class TecnicosService {
     return nuevo;
   }
 
+  remove(id:number){
+    this.tecnicos = this.tecnicos.filter(t=> t.id !== id);
+    return {eliminado:id};
+  }
+
+
 }
