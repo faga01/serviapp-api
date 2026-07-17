@@ -35,5 +35,11 @@ export class TecnicosService {
     return {eliminado:id};
   }
 
+  update(id:number, datos:{precio?:number; servicio?: string}){
+    const indice = this.tecnicos.findIndex(t=>t.id === id)
+    this.tecnicos[indice] = {...this.tecnicos[indice], ...datos}
+    return this.tecnicos[indice]
+  }
+
 
 }

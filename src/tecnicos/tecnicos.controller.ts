@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { TecnicosService } from './tecnicos.service';
+import path from 'path';
 //import { CreateTecnicoDto } from './dto/create-tecnico.dto';
 //import { UpdateTecnicoDto } from './dto/update-tecnico.dto';
 
@@ -27,5 +28,9 @@ export class TecnicosController {
     return this.tecnicosService.remove(+id)
   }
 
+  @Patch(':id')
+  update(@Param('id') id:string, @Body() datos: {precio?:number; servicio?: string}) {
+    return this.tecnicosService.update(+id, datos);
+  }
 
 }
