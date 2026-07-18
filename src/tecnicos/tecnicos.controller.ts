@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { TecnicosService } from './tecnicos.service';
+import { CreateTecnicoDto } from './dto/create-tecnico.dto';
 import path from 'path';
 //import { CreateTecnicoDto } from './dto/create-tecnico.dto';
 //import { UpdateTecnicoDto } from './dto/update-tecnico.dto';
@@ -19,7 +20,7 @@ export class TecnicosController {
   }
 
   @Post()
-  create(@Body() datos: {nombre:string; servicio:string; precio:number}) {
+  create(@Body() datos: CreateTecnicoDto) {
     return this.tecnicosService.create(datos);
   }
 
