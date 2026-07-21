@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { TecnicosService } from './tecnicos.service';
 import { CreateTecnicoDto } from './dto/create-tecnico.dto';
 import path from 'path';
@@ -10,8 +10,8 @@ export class TecnicosController {
   constructor(private readonly tecnicosService: TecnicosService) {}
 
   @Get()
-  findAll() {
-    return this.tecnicosService.findAll();
+  findAll(@Query('servicio') servicio?: string) {
+    return this.tecnicosService.findAll(servicio);
   }
 
   @Get(':id')

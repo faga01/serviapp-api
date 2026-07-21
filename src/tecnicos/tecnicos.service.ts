@@ -7,8 +7,10 @@ const prisma = new PrismaClient();
 @Injectable()
 export class TecnicosService {
 
-  findAll() {
-    return prisma.tecnico.findMany();
+  findAll(servicio?: string) {
+    return prisma.tecnico.findMany({
+      where: servicio ? {servicio: {contains : servicio}} : {},
+    });
   }
 
   findOne(id: number) {
